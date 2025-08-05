@@ -10,7 +10,7 @@ public class lab11 {
 	public static void main(String[] args) {
 
 	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter the date month and year yyyy-mm-dd");
+	System.out.println("Enter yyyy-mm-dd");
 	String inputDatestr=sc.next();
 	LocalDate inputDate=LocalDate.parse(inputDatestr);
 	System.out.println("Input date:"+inputDate);
