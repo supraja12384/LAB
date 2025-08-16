@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class lab1 {
+public class lab5 {
 
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
