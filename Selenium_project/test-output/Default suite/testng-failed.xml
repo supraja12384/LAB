@@ -3,19 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pac2.TCO12_TestNG">
+      <class name="pac2.Test3">
         <methods>
-          <include name="afterSuite"/>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
-          <include name="afterTest"/>
-          <include name="beforeSuite"/>
-          <include name="afterClass"/>
-          <include name="beforeMethod"/>
-          <include name="f" invocation-numbers="2"/>
-          <include name="beforeClass"/>
+          <include name="test1"/>
+          <include name="test3"/>
         </methods>
-      </class> <!-- pac2.TCO12_TestNG -->
+      </class> <!-- pac2.Test3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
