@@ -8,6 +8,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeClass;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +25,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
  
-public class TCO12_TestNG{
+public class files{
 	 WebDriver driver;
   @Test(dataProvider = "dp")
   public void f(String username, String password) throws InterruptedException {
@@ -28,6 +36,7 @@ public class TCO12_TestNG{
 		obj.enterusername(username);
 		obj.enterpassword(password);
 		obj.clickonlogin();
+		
 		//driver.findElement(By.name("username")).sendKeys(username);
 		//driver.findElement(By.name("password")).sendKeys(password);
 		//driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -49,13 +58,26 @@ public class TCO12_TestNG{
  
  
   @DataProvider
-  public Object[][] dp() {
-    return new Object[][] {
-      new Object[] { "Admin", "admin123" },
-      new Object[] { "Suppu", "suppu123" },
-      new Object[] { "geeta", "geetha123" },
+  public Object[][] dp() throws IOException {
+    String [][] data=new String[3][2];
+    String projectpath=System.getProperty("user.dir");
+    File file1=new File(projectpath+"\\data.xlsx");
+    FileInputStream fs=new FileInputStream(file1);
+    XSSFWorkbook workbook =new XSSFWorkbook(fs);
+    XSSFSheet worksheet=workbook.getSheetAt(0);
+    int rowcount=worksheet.getPhysicalNumberOfRows();
+    System.out.println("rows:"+rowcount);
+    
+    for(int i=0;i<rowcount;i++)
+    {
+    	data[i][0]=worksheet.getRow(i).getCell(0).getStringCellValue();
+    	data[i][1]=worksheet.getRow(i).getCell(1).getStringCellValue();
+    	return data;
+     
     };
-  }
+	return data;
+}
+
   @BeforeClass
   public void beforeClass() {
 	  System.out.println("Before class");
