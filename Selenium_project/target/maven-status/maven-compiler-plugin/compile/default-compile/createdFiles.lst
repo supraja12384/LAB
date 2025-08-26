@@ -1,0 +1,6 @@
+com\orangehrm\utilities\ExtentManager.class
+com\orangehrm\config\ConfigReader.class
+com\orangehrm\pages\LoginPage.class
+com\orangehrm\utilities\Screenshot.class
+com\orangehrm\pages\Login_PageFactory.class
+com\orangehrm\utilities\ExcelUtilities.class
