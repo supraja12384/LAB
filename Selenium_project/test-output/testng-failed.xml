@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pac2.lab16">
+      <class name="project.Q3">
         <methods>
-          <include name="afterTest"/>
-          <include name="beforeSuite"/>
-          <include name="afterMethod"/>
-          <include name="beforeTest"/>
-          <include name="f"/>
-          <include name="afterSuite"/>
           <include name="beforeClass"/>
+          <include name="f"/>
           <include name="beforeMethod"/>
           <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="afterMethod"/>
+          <include name="beforeTest"/>
+          <include name="afterSuite"/>
         </methods>
-      </class> <!-- pac2.lab16 -->
+      </class> <!-- project.Q3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
